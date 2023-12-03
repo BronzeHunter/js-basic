@@ -138,7 +138,7 @@ describe('Задания core js', () => {
                 core.deepEqual({a: 'a', b: 'b'}, {b: 'b', a: 'a'}),
                 true
             );
-            assert.equal(core.deepEqual(NaN, NaN), true);
+            assert.equal(isNaN(core.deepEqual(NaN, NaN)), true);
         });
 
         it('Возвращает false если объекты не равны', () => {
