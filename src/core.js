@@ -98,6 +98,19 @@ function deepEqual(firstObject, secondObject) {
     }
   }
 
+  // Дополнительная проверка для массивов
+  if (Array.isArray(firstObject) && Array.isArray(secondObject)) {
+    if (firstObject.length !== secondObject.length) {
+      return false;
+    }
+
+    for (let i = 0; i < firstObject.length; i++) {
+      if (!deepEqual(firstObject[i], secondObject[i])) {
+        return false;
+      }
+    }
+  }
+
   return true;
 }
 
