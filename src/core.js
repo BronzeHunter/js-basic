@@ -109,6 +109,8 @@ function deepEqual(firstObject, secondObject) {
         return false;
       }
     }
+  } else if (Array.isArray(firstObject) || Array.isArray(secondObject)) {
+    return false; // Один из них массив, а другой - нет
   }
 
   return true;
@@ -126,3 +128,4 @@ module.exports = {
   sequence,
   deepEqual,
 };
+
